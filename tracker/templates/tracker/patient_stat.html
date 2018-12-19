@@ -1,0 +1,15 @@
+{% include "tracker/patient_navbar.html" %}
+
+{% block content %}
+
+this is a stat details page
+
+<p>Stat Details: </p>
+<p>  Flossed : {{ stat.has_flossed }} </p>
+<p>  Mouth washed : {{ stat.has_mouth_washed }} </p>
+<p>  Coffee Intake : {{ stat.coffee_intake }} </p>
+<p>  Times Brushed : {{ stat.times_brushed }} </p>
+<p>  Sugar Intake : {{ stat.sugar_intake }} </p>
+<p>  Date Logged : {{ stat.date_logged }} </p>
+
+{% endblock %}

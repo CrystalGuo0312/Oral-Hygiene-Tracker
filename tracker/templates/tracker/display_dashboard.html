@@ -1,0 +1,33 @@
+{% include "tracker/menu.html" with active_tab='Browse Recipes' %}
+
+<h1>Hello, {{ user.get_username }}</h1>
+
+{% if user.get_full_name %}
+	<p> Your name is {{ user.get_full_name }} </p>
+{% endif %}
+    <a href="{% url 'newrecipe' %}">Create New Recipe</a>
+<hr>
+
+Your Recipes:
+{% if user_recipes %}
+    <ul>
+    {% for recipe in user_recipes %}
+    	<li> <a href="{% url 'recipe' recipe.id %}">{{ recipe.recipe_text }}</a> </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no recipes</p>
+{% endif %}
+
+<hr>
+
+Your Liked Recipes:
+{% if liked_recipes %}
+    <ul>
+    {% for like in liked_recipes %}
+    	<li> <a href="{% url 'recipe' like.recipe.id %}">{{ like.recipe.recipe_text }}</a> </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You haven't liked any recipes</p>
+{% endif %}

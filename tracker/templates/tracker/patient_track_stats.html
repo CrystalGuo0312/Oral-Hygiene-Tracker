@@ -1,0 +1,18 @@
+{% include "tracker/patient_navbar.html" %}
+
+{% block content %}
+
+this is the patient track stats page
+
+<p> Stats: </p>
+{% if stats %}
+    <ul>
+    {% for stat in stats %}
+    	<li> <a href="{% url 'stat' stat.id %}">{{ stat.date_logged }} </a> </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no stats logged</p>
+{% endif %}
+
+{% endblock %}

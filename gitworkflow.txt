@@ -1,0 +1,53 @@
+##########################
+####                  ####
+####  GIT WORKFLOW    ####
+####                  ####
+##########################
+
+This workflow is used for implementing a relatively small chunk of code and integrating it into the project.
+For each new 'task' you begin, start this workflow again. You shouldn't be working on a single branch for a
+long time, or it becomes increasingly likely you'll end up with conflicts.
+
+Branches should only be merged with the master branch once the feature is implemented in a way that it doesn't
+break any existing code.
+
+
+
+1. git pull origin master
+# Pull all new changes from the remote repository
+
+2. git checkout -b <branchname> master
+# Create and enter a new local branch for you to work on
+
+# This is when you can start editing all the files you need to.
+# Depending on your editor you may need to reload them.
+# Atom works really really well with .git so consider that?
+# Sublime text might be fine also, but I haven't used it.
+
+3. git add *
+# 'Stage' all the files you've changed or added.
+# The * is a wildcard operator and stages everything.
+# You can refine this by actually specifying which files you want to change, but usually * is fine.
+
+4. git commit -m "<Commit message>"
+# Commit the changes to the repo.
+# You can repeat steps 3 and 4 here as much as you want as you make changes to your branch.
+# Once you're done making changes to your branch move on.
+
+5. git checkout master
+# Move back to the master branch
+
+6. git pull origin master
+# Pull any new changes that might've happened while you were working on your branch
+
+6. git merge <branchname>
+# Merge the changes you made in your branch with the master branch
+# Pray that there are no conflicts
+# If there are conflicts assume foetal position and cry
+
+7. git push origin master
+# Push the changes you made to the remote repository
+# IF YOU THINK THINGS HAVE GONE WRONG LOCALLY DO NOT PUSH
+
+7. git branch -d <branchname>
+# Delete the local branch you created at the start

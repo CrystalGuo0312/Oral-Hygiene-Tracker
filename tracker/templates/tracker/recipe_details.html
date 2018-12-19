@@ -1,0 +1,45 @@
+<div></div>
+<!-- 
+{% include "tracker/menu.html" with active_tab='Browse Recipes' %}
+
+<h1>{{ recipe.recipe_text }}</h1>
+
+<p> Made by <a href="{% url 'userpage' chef.user.username %}">{{ chef.user.username }}</a></p>
+
+{{ recipe.like_count }} Likes
+
+<hr>
+
+<p> Category: {{ recipe.recipe_category }} </p>
+<p> Dietary Requirements: {{ recipe.recipe_diet_req }} </p>
+<p> Servings: {{ recipe.servings }} person(s)</p>
+<p> Duration: {{ recipe.duration }} mins</p>
+
+<img src="{{ recipe.image_path.url }}" alt={{ recipe.recipe_text }} style="width:300px;height:300px;">
+
+<hr>
+
+Ingredients:
+{% if ingredients_list %}
+    <ul>
+    {% for ingredient in ingredients_list %}
+        <li> {{ ingredient.quantity }} x {{ ingredient.ingredient_name }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ingredients are available. (THIS SHOULD NEVER BE DISPLAYED)</p>
+{% endif %}
+
+<hr>
+
+Steps:
+{% if steps_list %}
+    <ul>
+    {% for step in steps_list %}
+        <li> {{ step.step_number }}: {{ step.contents }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No steps are available. (THIS SHOULD NEVER BE DISPLAYED)</p>
+{% endif %}
+ -->

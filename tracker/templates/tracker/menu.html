@@ -1,0 +1,23 @@
+<center>
+
+{% if user.is_authenticated %}
+<p>Logged in as {{ user.get_username }}</p><a href="/accounts/logout">Logout</a> 
+{% else %}
+	<a href="/accounts/login">Login</a>/<a href="/accounts/register">Register</a>
+{% endif %} 
+
+
+<div style="background-color:#d1f8ff">
+<img src="https://68.media.tumblr.com/8d2be0b21eb164150ffc06c7b70a58ce/tumblr_inline_nd5rlbVURz1r30dnf.gif" alt="">
+
+<h1>Eat Your Feelings</h1>
+
+<ul class="tab-menu">
+    <li class="{% if active_tab == 'Browse Recipes' %}active{% endif %}"><a href="/">Browse Recipes</a></li>
+    {% if user.is_authenticated %}
+    	<li class="{% if active_tab == 'My Dashboard' %}active{% endif %}"><a href="/dashboard">My Dashboard</a></li>
+    {% endif %} 
+</ul>
+</div>
+</center>
+<hr>

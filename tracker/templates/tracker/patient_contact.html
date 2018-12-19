@@ -1,0 +1,19 @@
+{% include "tracker/patient_navbar.html" %}
+
+{% block content %}
+
+this is the patient contact page
+
+<p>Dentist: </p>
+<p>  Your dentist is {{ dentist.user.first_name }} </p>
+<p>  Your dentist's email is {{ dentist.user.email }} </p>
+<p>  Your dentist's phone number is {{ dentist.phone_number }} </p>
+
+<p> Clinic: </p>
+<p>  Your clinic is {{ clinic.name }} </p>
+<p>  Your clinic's address is {{ clinic.address }} </p>
+<p>  Your clinic's description is {{ clinic.description }} </p>
+<p>  Your clinic's open hours are is {{ clinic.open_hours }} </p>
+<p>  Your dentist's phone number is {{ clinic.phone_number }} </p>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load extras %}
+
+<html>
+    <head></head>
+    <body>
+        {% block nav %}
+
+        <p> Hello {{ user.get_username }} </p>
+        <p> You are a {{ request.user|get_group }} ::: <a href="{% url 'logout' %}">Log out</a></p>
+
+        <ul id="nav">
+            <li>{% block nav-home %}<a href="{% url 'index' %}">Home</a>{% endblock %}</li>
+            <li>{% block nav-pub %}<a href="{% url 'pubannouncement' %}">Publish Announcement</a>{% endblock %}</li>
+            <li>{% block nav-requests %}<a href="{% url 'requests' %}">Patient Requests</a>{% endblock %}</li>
+            <!--li>{% block nav-quizzes %}<a href="{% url 'quizzes' %}">Quizzes</a>{% endblock %}</li-->
+        </ul>
+        <hr>
+        {% endblock %}
+    </body>
+</html>

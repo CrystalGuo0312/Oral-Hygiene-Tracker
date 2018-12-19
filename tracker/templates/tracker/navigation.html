@@ -1,0 +1,20 @@
+{% load extras %}
+
+<html>
+    <head>
+    </head>
+    <body>
+        {% block nav %}
+
+        <p> Hello {{ user.get_username }} </p>
+        <p> You are a {{ request.user|get_group }} <a href="{% url 'logout' %}">Log out</a></p>
+
+        <ul id="nav">
+            <li>{% block nav-home %}<a href="{% url 'index' %}">Home</a>{% endblock %}</li>
+            <li>{% block nav-about %}<a>About</a>{% endblock %}</li>
+            <li>{% block nav-contact %}<a>Contact</a>{% endblock %}</li>
+        </ul>
+        <hr>
+        {% endblock %}
+    </body>
+</html>

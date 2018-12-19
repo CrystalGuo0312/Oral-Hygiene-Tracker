@@ -1,0 +1,20 @@
+{% include "tracker/patient_navbar.html" %}
+
+{% block content %}
+
+this is patient dashboard
+
+<p>  Your dentist is {{ dentist.user.first_name }} {{ dentist.user.last_name }} </p>
+
+Dentist Announcements:
+{% if announcements %}
+    <ul>
+    {% for announcement in announcements %}
+    	<li> {{ announcement.date_sent }} : {{ announcement.content }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>You have no announcements</p>
+{% endif %}
+
+{% endblock %}

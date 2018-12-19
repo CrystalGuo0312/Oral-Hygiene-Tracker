@@ -1,0 +1,45 @@
+{% load extras %}
+
+<html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    </head>
+    <body>
+        {% block nav %}
+
+        <p> Hello {{ user.get_username }} </p>
+        <p> You are a  ::: <a href="{% url 'logout' %}">Log out</a></p>
+
+        <ul id="nav">
+            <li>{% block nav-home %}<a href="{% url 'index' %}">Home</a>{% endblock %}</li>
+            <li>{% block nav-log %}<a href="{% url 'logstats' %}">Log Stats</a>{% endblock %}</li>
+            <li>{% block nav-track %}<a href="{% url 'trackstats' %}">Track Stats</a>{% endblock %}</li>
+            <li>{% block nav-info %}<a href="{% url 'information' %}">Information</a>{% endblock %}</li>
+            <li>{% block nav-contact %}<a href="{% url 'contact' %}">Contact</a>{% endblock %}</li>
+            <li>{% block nav-discussion %}<a href="{% url 'discussion' %}">Discussion Board</a>{% endblock %}</li>
+            <li>{% block nav-health %}<a href="{% url 'health' %}">E-Health</a>{% endblock %}</li>
+        </ul>
+
+        I was just very quickly working on this and had to commit it 
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+         <a class="navbar-brand" href="#"> {{ request.user|get_group }} : {{ user.get_username }} </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarsExample02">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Link</a>
+             </li>
+           </ul>
+         </div>
+        </nav>
+
+        <hr>
+        {% endblock %}
+    </body>
+</html>

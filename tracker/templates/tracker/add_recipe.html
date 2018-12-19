@@ -1,0 +1,91 @@
+{% load staticfiles %}
+<div class="row">
+	<!-- Recipe Category/Tags, Servings, Estimated Time -->
+	<div class="input-field col s6">
+		<input value="" id="recipe_title" type="text" class="validate">
+		<label class="active" for="recipe_title">Recipe Title</label>
+	</div>
+</div>
+
+<div class="row">
+	<div class="input-field col s12 m4 l4">
+		<select class="icons">
+			<option value="" disabled selected>Choose recipe category</option>
+			<option value="" data-icon="{% static 'tracker/images/side_dish.jpg' %}" class="circle">Side Dish</option>
+			<option value="" data-icon="{% static 'tracker/images/salad.png' %}" class="circle">Salads</option>
+			<option value="" data-icon="{% static 'tracker/images/main_dish.jpg' %}" class="circle">Main Dish</option>
+			<option value="" data-icon="{% static 'tracker/images/drinks.jpg' %}" class="circle">Drinks</option>
+			<option value="" data-icon="{% static 'tracker/images/soups.jpeg' %}" class="circle">Soups</option>
+			<option value="" data-icon="{% static 'tracker/images/dessert.jpg' %}" class="circle">Dessert</option>
+			<option value="" data-icon="{% static 'tracker/images/appetizers.jpg' %}" class="circle">Appetizers</option>
+		</select>
+		<label>Category</label>
+	</div>
+	
+	<div class="input-field col s12 m4 l4">
+		<select multiple>
+			<option value="" disabled selected>Please select</option>
+			<option value="1">Vegetarian</option>
+			<option value="2">Pescetarian</option>
+			<option value="3">Kosher</option>
+		</select>
+		<label>Dietary</label>
+	</div>
+
+	<div class="input-field col s12 m4 l4">
+			<input value="00:00" type="text" class="timepicker">
+			<label>Estimated Time (hh:mm)</label>
+	</div>
+</div>
+
+<div class="row">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="textarea_ingredients" class="materialize-textarea"></textarea>
+				<label for="textarea_ingredients">Ingredients</label>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="textarea_directions" class="materialize-textarea"></textarea>
+				<label for="textarea_directions">Directions</label>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="textarea_description" class="materialize-textarea"></textarea>
+				<label for="textarea_description">Description</label>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+		<form class="col s12" action="#">
+			<div class="file-field input-field">
+				<div class="btn #1976d2 blue darken-2">
+					<span>File</span>
+					<input type="file">
+				</div>
+				<div class="file-path-wrapper">
+					<input class="file-path validate" type="text">
+				</div>
+			</div>
+	</form>
+</div>
+<div class="row">
+	<div class="s12" style="text-align: center;">
+  	<button class="btn waves-effect waves-light #1976d2 blue darken-2" type="submit" name="action">Add Recipe</button>
+  </div>
+</div>

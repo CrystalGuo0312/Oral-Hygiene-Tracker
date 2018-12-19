@@ -1,0 +1,13 @@
+<!-- recipe_title = forms.CharField(label='Recipe Title', max_length=50)
+	recipe_category = forms.ChoiceField(choices=CATEGORY, widget=forms.RadioSelect())
+	recipe_diet_req = forms.ChoiceField(choices=DIETARYREQ)
+	recipe_servings = forms.IntegerField(min_value=1, max_value=1000)
+	recipe_duration = forms.IntegerField(min_value=1, max_value=20160)
+	recipe_image = forms.ImageField() -->
+{% include "tracker/menu.html" with active_tab='Browse Recipes' %}
+
+<form action="." method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Submit" />
+</form>

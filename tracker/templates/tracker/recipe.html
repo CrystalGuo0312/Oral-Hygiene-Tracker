@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col s3 center" style="background: red;">
+		<div class="row">
+			<!-- Recipe Image add max width/height-->
+			<img src="" class="recipeImage">
+		</div>
+		<div class="row">
+			<!-- Recipe Like, Social Media -->
+			<i class="material-icons" style="font-size: 19px">favorite_border</i>
+		</div>
+	</div>
+	<div class="col s9" style="background: blue;">
+		<div class="row">
+			<!-- Category -->
+			<div class="col s12">Vegetarian, Main Dish</div>
+		</div>
+		<div class="row">
+			<!-- Minutes, Servings, Likes -->
+			<div class="col s4" style="background: green;">
+				30 minutes
+			</div>
+			<div class="col s4" style="background: green;">
+				6 Servings
+			</div>
+			<div class="col s4" style="background: green;">
+				30 Likes
+			</div>
+			<!-- Description -->
+			<div class="row">
+				<div class="col s12">Spaghetti is a cold ass dish</div>
+			</div>
+			{% include "tracker/recipe_tabs.html" %}
+		</div>
+	</div>
+</div>
